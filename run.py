@@ -59,9 +59,9 @@ class VooiDC:
     
         print('')
         print_gradient_text(custom_fig.renderText('ASC AIRDROP'), VooiDC.start_color, VooiDC.end_color)
-        print(f"{Fore.GREEN}!!! VOOI Mini Apps BOT !!!{Fore.RESET}")
-        print(f"{Fore.GREEN}[+] Jika Mengalami Error!{Fore.RESET}")
-        print(f"{Fore.YELLOW}[+] Silahkan Join Telegram : @airdropasc{Fore.RESET}")
+        print(f"{Fore.GREEN + Style.BRIGHT}!!! VOOI Mini Apps BOT !!!{Fore.RESET}")
+        print(f"{Fore.GREEN + Style.BRIGHT}[+] Jika Mengalami Error!{Fore.RESET}")
+        print(f"{Fore.YELLOW + Style.BRIGHT}[+] Silahkan Join Telegram : @airdropasc{Fore.RESET}")
         print('')
     def get_headers(self):
         headers = self.base_headers.copy()
@@ -70,17 +70,17 @@ class VooiDC:
         return headers
 
     def log(self, msg, type='info'):
-        timestamp = datetime.now().strftime("%H:%M:%S")
+        timestamp = datetime.now().strftime("%x %X %Z")
         if type == 'success':
-            print(f"[{timestamp}] [*] {Fore.GREEN}{msg}")
+            print(f"[{timestamp}] [*] {Fore.GREEN + Style.BRIGHT}{msg}")
         elif type == 'custom':
-            print(f"[{timestamp}] [*] {Fore.MAGENTA}{msg}")
+            print(f"[{timestamp}] [*] {Fore.MAGENTA + Style.BRIGHT}{msg}")
         elif type == 'error':
-            print(f"[{timestamp}] [!] {Fore.RED}{msg}")
+            print(f"[{timestamp}] [!] {Fore.RED + Style.BRIGHT}{msg}")
         elif type == 'warning':
-            print(f"[{timestamp}] [*] {Fore.YELLOW}{msg}")
+            print(f"[{timestamp}] [*] {Fore.YELLOW + Style.BRIGHT}{msg}")
         else:
-            print(f"[{timestamp}] [*] {Fore.BLUE}{msg}")
+            print(f"[{timestamp}] [*] {Fore.BLUE + Style.BRIGHT}{msg}")
 
     def countdown(self, seconds):
         for i in range(seconds, -1, -1):
@@ -340,7 +340,7 @@ class VooiDC:
 
                 time.sleep(1)
 
-            self.countdown(10 * 60)
+            self.countdown(5)
 
 if __name__ == "__main__":
     VooiDC.display_banner()
