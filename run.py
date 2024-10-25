@@ -70,7 +70,7 @@ class VooiDC:
         return headers
 
     def log(self, msg, type='info'):
-        timestamp = datetime.now().strftime("%x %X %Z")
+        timestamp = datetime.now().strftime("%x %X")
         if type == 'success':
             print(f"[{timestamp}] [*] {Fore.GREEN + Style.BRIGHT}{msg}")
         elif type == 'custom':
